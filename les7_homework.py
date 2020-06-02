@@ -14,36 +14,36 @@ Matrix (двух матриц). Результатом сложения долж
 """
 
 
-# class Matrix:
-#
-#     def __init__(self, data):
-#         self.data = data
-#
-#     def __iter__(self):
-#         return iter(self.data)
-#
-#     def __str__(self):
-#         matrix = str()
-#         i = 0
-#         while i < len(self.data):
-#             matrix = matrix + '\t'.join(str(j) for j in self.data[i]) + '\n' * 2
-#             i += 1
-#         return matrix
-#
-#     def __add__(self, other):
-#         results = [[self.data[i][j] + other.data[i][j] for j in range(len(self.data[0]))]
-#                    for i in range(len(self.data))]
-#         return results
-#
-#
-# mtx_1 = Matrix([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
-# print(f'\nПервая матрица:\n\n{mtx_1}{"-" * 10}')
-#
-# mtx_2 = Matrix([[11, 12, 13], [14, 15, 16], [17, 18, 19]])
-# print(f'\nВторая матрица:\n\n{mtx_2}{"-" * 10}')
-#
-# res_mtx = mtx_1 + mtx_2
-# print(f'\nРезультирующая матрица:\n\n{Matrix(res_mtx)}')
+class Matrix:
+
+    def __init__(self, data):
+        self.data = data
+
+    def __iter__(self):
+        return iter(self.data)
+
+    def __str__(self):
+        matrix = str()
+        i = 0
+        while i < len(self.data):
+            matrix = matrix + '\t'.join(str(j) for j in self.data[i]) + '\n' * 2
+            i += 1
+        return matrix
+
+    def __add__(self, other):
+        results = [[self.data[i][j] + other.data[i][j] for j in range(len(self.data[0]))]
+                   for i in range(len(self.data))]
+        return results
+
+
+mtx_1 = Matrix([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
+print(f'\nПервая матрица:\n\n{mtx_1}{"-" * 10}')
+
+mtx_2 = Matrix([[11, 12, 13], [14, 15, 16], [17, 18, 19]])
+print(f'\nВторая матрица:\n\n{mtx_2}{"-" * 10}')
+
+res_mtx = mtx_1 + mtx_2
+print(f'\nРезультирующая матрица:\n\n{Matrix(res_mtx)}')
 
 """
 2. Реализовать проект расчета суммарного расхода ткани на производство одежды. Основная сущность (класс) этого 
